@@ -1,0 +1,65 @@
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+    <div class="container">  
+      <h1 class="title">Contact Us!</h1>  
+    </div>
+    </div>
+    </section>
+
+    <section class="section">
+    <div class="container">
+
+      <!-- form goes here -->
+      <form (ngSubmit)="submit()">
+
+        <!-- First Name -->
+        <div class="field">
+          <input 
+            type="text" 
+            name="fname" 
+            class="input" 
+            placeholder="First Name" 
+            [(ngModel)]="fname"
+            required
+            #firstNameInput="ngModel">
+
+          <div class="help is-error" *ngIf="firstNameInput.invalid && firstNameInput.dirty">
+            First Name is required.
+          </div>
+        </div>
+
+         <!-- Last Name -->
+         <div class="field">
+            <input 
+              type="text" 
+              name="lname" 
+              class="input" 
+              placeholder="Last Name" 
+              [(ngModel)]="lname"
+              required
+              #lastNameInput="ngModel">
+  
+            <div class="help is-error" *ngIf="lastNameInput.invalid && lastNameInput.dirty">
+              Last Name is required.
+            </div>
+          </div>
+        
+          <!-- Date of Birth -->
+          <!-- <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time"> -->
+
+        <!-- message -->
+        <div class="field">
+          <textarea 
+            class="textarea" 
+            name="message" 
+            placeholder="Enter message" 
+            [(ngModel)]="message"
+            #messageInput="ngModel"></textarea>
+        </div>
+
+        <button type="submit" class="button is-danger is-large">Submit</button>
+
+      </form>
+
+    </div>
+    </section>
